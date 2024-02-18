@@ -13,6 +13,13 @@ import java.io.IOException;
 * - 쿼리 파라미터는 다음과 같이 Url 뒤에 "?" 를 붙여서 시작하고 "key=value" 로 작성하며 "&" 로 구분합니다.
 * 예) http://localhost:8080/request-param?username=hello&age=20
 *
+* 참고로 쿼리 파라미터 조회 메서드 req.getParameter()는
+* GET URL 쿼리 파라미터 형식, POST HTML form 형식(x-www-form-urlencoded) 둘 다 지원합니다.
+* 클라이언트에서 입장에선 요청 시 두 방식에 차이가 있지만 데이터를 받는 서버에서는 형식이 동일하기 때문입니다. (key=value)
+*
+* 참고로 content-type은 HTTP 메시지 바디의 데이터 형식을 지정합니다.
+* GET URL 쿼리 파라미터 형식일 때에는 HTTP 메시지 바디를 사용하지 않기 때문에 content-type이 없습니다.
+* POST HTML Form 형식일 때에는 HTTP 메시지 바디를 사용하기 때문에 꼭 어떤 형식인지 꼭 지정이 필요합니다. application/x-www-form-urlencoded
 * */
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
