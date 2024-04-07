@@ -76,13 +76,14 @@ public class BasicItemController {
         return "basic/item";
     }
 
+    // 새로고침 문제를 방지->  PRG
 //    @PostMapping("/add")
     public String addItemV5(Item item) {
         itemRepository.save(item);
         return "redirect:/basic/items/" + item.getId();
     }
 
-    // add 같은 url로 METHOD 방식의 GET, POST로 구분한다.
+    // add 같은 urlㅣ잠ㄴ 하나는 뷰, 하나는 요청폼으로 METHOD 방식의 GET, POST로 구분해준다.
     @PostMapping("/add")
     public String addItemV6(Item item, RedirectAttributes redirectAttributes) {
         Item savedItem = itemRepository.save(item);
@@ -101,6 +102,9 @@ public class BasicItemController {
     @PostMapping("/{itemId}/edit")
     public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
         itemRepository.update(itemId, item);
+
+//        PathVariable에 있는거 그대로 쓸 수 있음.
+        //상태코드 302 - 리다이렉트
         return "redirect:/basic/items/{itemId}";
     }
 
