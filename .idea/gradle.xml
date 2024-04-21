@@ -4,6 +4,15 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/form" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/form" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="WRAPPED" />
@@ -34,6 +43,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/springmvc" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/thymeleaf-basic" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/thymeleaf-basic" />
           </set>
         </option>
       </GradleProjectSettings>
