@@ -7,7 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 // 스프링 부트에서 하위 작업을 BasicErrorController를 자동으로 빈으로 등록하여 쓸 수 있다.
-//@Component
+// 예외가 WAS로 전달되거나, sendError()가 호출되면 아래 설정된 페이지로 이동된다.
+@Component
 public class WebServerCustomizer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
