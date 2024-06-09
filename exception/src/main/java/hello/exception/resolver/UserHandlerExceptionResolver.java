@@ -21,7 +21,6 @@ public class UserHandlerExceptionResolver implements HandlerExceptionResolver {
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 
         try {
-
             if (ex instanceof UserException) {
                 log.info("UserException resolver to 400");
                 String acceptHeader = request.getHeader("accept");
@@ -36,7 +35,7 @@ public class UserHandlerExceptionResolver implements HandlerExceptionResolver {
                     response.setContentType("application/json");
                     response.setCharacterEncoding("utf-8");
                     response.getWriter().write(result);
-                    return new ModelAndView();
+                    return new ModelAndView(); // 예외 터지는 것은 막고 정상흐름으로 리턴이 가능
                 } else {
                     // TEXT/HTML
                     return new ModelAndView("error/500");

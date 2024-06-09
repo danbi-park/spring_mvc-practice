@@ -32,6 +32,7 @@ public class ErrorPageController {
         return "error-page/404";
     }
 
+    // Accept 미 지정시 */* 로 호출되어 아래 컨트롤러가 호출됨
     @RequestMapping("/error-page/500")
     public String errorPage500(HttpServletRequest request, HttpServletResponse response) {
         log.info("errorPage 500");
@@ -39,6 +40,8 @@ public class ErrorPageController {
         return "error-page/500";
     }
 
+    // produces 를 사용 함으로써 요청 시 Header의 Accept(클라이언트가 받을 응답 타입)에 따라 우선순위를 가진다.
+    // Accept이 application/json으로 요청 시 아래 컨트롤러가 호출된다.
     @RequestMapping(value = "/error-page/500", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> errorPage500Api(
             HttpServletRequest request, HttpServletResponse response) {
@@ -51,7 +54,7 @@ public class ErrorPageController {
         result.put("message", ex.getMessage());
 
         Integer statusCode = (Integer) request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        return new ResponseEntity<>(result, HttpStatus.valueOf(statusCode));
+        return new ResponseEntity<>(result, HttpStatus.valueOf(statusCode)); // 결과, 상태코드
     }
 
     // reques의 attribute에서 다양한 오류 정보를 저장하고 있다.
