@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-//AOP 와 비슷함, 옵션으로 지정한 클래스로 요청이 들어올 때 하위 ExceptionHandler가 적용됨
+// AOP 와 비슷함, 옵션으로 지정한 클래스로 요청이 들어올 때 하위 ExceptionHandler가 적용됨
 @RestControllerAdvice(basePackages = "hello.exception.api") // 패키지 하위 적용
-//@RestControllerAdvice(annotations = RestController.class) // 특정 어노테이션 적용
-//@RestControllerAdvice(annotations = assignableTypes = {ControlllerInterface.class, AbbstractController.class}) // 특정 제어 클래스 적용
+// @RestControllerAdvice(annotations = RestController.class) // 특정 어노테이션 적용
+// @RestControllerAdvice(annotations = assignableTypes =
+// {ControlllerInterface.class, AbbstractController.class}) // 특정 제어 클래스 적용
 public class ExControllerAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
