@@ -8,8 +8,21 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
         </processorPath>
-        <module name="exception.main" />
+        <module name="typeconverter.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="exception" target="11" />
+      <module name="form" target="11" />
+      <module name="item-service" target="11" />
+      <module name="login" target="11" />
+      <module name="message" target="11" />
+      <module name="servlet" target="11" />
+      <module name="springmvc" target="11" />
+      <module name="thymeleaf-basic" target="11" />
+      <module name="thymeleaf-basic.main" target="11" />
+      <module name="thymeleaf-basic.test" target="11" />
+      <module name="validation" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

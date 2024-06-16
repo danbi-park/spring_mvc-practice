@@ -57,10 +57,10 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/thymeleaf-basic" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/typeconverter" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/thymeleaf-basic" />
+            <option value="$PROJECT_DIR$/typeconverter" />
           </set>
         </option>
       </GradleProjectSettings>
